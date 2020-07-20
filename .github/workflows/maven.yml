@@ -28,13 +28,14 @@ jobs:
       with:
         name: lab-41-demo01-1.2-release.jar
         path: staging
-    - name: Dingtalk Robot Message
-      uses: fifsky/dingtalk-action@v0.0.1
-      with:
-        url: ${{ secrets.DINGTALK_WEBHOOK}}
-        type: markdown
-        content: |
-          # Tips
-          ## Hello
-          > from github action message
+    - name: Sending Dingtalk Message
+      uses: x-actions/dingtalk@master
+      env:
+        DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
+        DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
+        MSGTYPE: markdown
+        TITLE: "x-actions dingtalk message"
+        TEXT: |
+          # Noti
+          > Build Github Action Done.
           > ^_^
