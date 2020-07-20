@@ -27,9 +27,13 @@ jobs:
       with:
         name: lab-41-demo01-1.2-release.jar
         path: staging
-    - name: GitHub Action for Dingtalk
-      uses: cooperwu/action-dingtalk@v0.0.1
-            action "Dingtalk notification" {
-            uses = "cooperwu/action-dingtalk@master"
-            secrets = ["DINGTALK_WEBHOOK"]
-            }
+    - name: dingtalk robot message
+      uses: fifsky/dingtalk-action@master
+      with:
+        url: ${{ secrets.DINGTALK_WEBHOOK}}
+        type: markdown
+        content: |
+          # Tips
+          ## Hello
+          > from github action message
+          > ^_^
