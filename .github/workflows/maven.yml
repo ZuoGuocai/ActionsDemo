@@ -34,8 +34,8 @@ jobs:
         DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
         DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
         MSGTYPE: markdown
-        TITLE: "x-actions dingtalk message"
+        TITLE: "构建通知"
         TEXT: |
-          # Noti
-          > Build Github Action Done.
-          > ^_^
+          ## <font color=#66CDAA face="黑体"> ${{ github.workspace }} 构建成功 </font>
+          > 构建制品地址...
+          > ^_^如有问题，请联系...
